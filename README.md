@@ -1,111 +1,121 @@
-# HR-Analytics-Dashboard
-Power BI dashboard analysing HR data to explore employee performance, engagement, retention, and satisfaction. Demonstrates data cleaning, modelling, DAX measures, and visual storytelling skills.
-## Overview
+# HR Analytics Project
+A portfolio project combining Python data analysis and Power BI dashboard development.
 
-This project analyses an HR Analytics dataset to uncover patterns related to employee performance, retention, demographics, and workplace satisfaction. The goal is to provide actionable insights to help organisations make data-driven decisions.
+This project demonstrates an end-to-end HR analytics workflow, including data cleaning, feature engineering, employee attrition modelling, training ROI analysis, and dashboard reporting.
 
-This dashboard forms part of my data analytics portfolio and demonstrates my skills in:
+---
 
-* Data modelling
-* Cleaning and transforming datasets in Power Query
-* Building insightful Power BI dashboards
-* Creating DAX measures
-* Visual storytelling
+## Repository Structure
 
-## 📁 Dataset
+HR-Analytics-Project/
+│
+├── data/                               # Dataset(s)
+├── notebooks/
+│   └── HR_Data_Analysis.ipynb          # Jupyter Notebook (Python)
+├── dashboard/
+│   ├── HR_RB.pdf                       # Power BI Dashboard
+│   └── HR_Data_JupyterNotebook.pdf     # Notebook PDF (Python output)
+└── README.md
 
-* **Dataset:** HR Analytics
-* **Size:** ~3000 rows (update if exact number differs)
-* **Variables include:**
 
-  * Employee demographics
-  * Job role & department
-  * Performance scores
-  * Attrition status
-  * Satisfaction & engagement measures
+## Power BI Dashboard Summary
 
-## 🛠 Tools Used
+### 1. HR Dashboard Overview  
+(See HR_RB.pdf, page 1)
 
-* Power BI (DAX, Power Query)
-* Python (optional cleaning)
-* Canva (project summary poster)
-* GitHub (version control + documentation)
+- Total employees, new hires, exits  
+- Gender distribution and age groups  
+- Engagement, satisfaction, and work-life balance scoring  
+- Headcount trend (2018–2023)  
+- Department and diversity breakdowns  
 
-## 📈 Key Insights
+### 2. Workforce Analysis  
+(See HR_RB.pdf, page 2)
 
-*(Update after finishing your dashboard)*
-Examples:
+- Employee count by department  
+- Pay zone structure  
+- Demographic analysis  
+- DepartmentType slicer and filtering  
 
-* Employees with low job satisfaction are 3× more likely to leave
-* Attrition is highest in Sales and R&D
-* Younger employees have higher turnover rates
-* Performance score is positively linked to satisfaction and training hours
+### 3. Training and Development  
+(See HR_RB.pdf, page 3)
 
-## 📊 Dashboard Features
+- Internal vs external training investment  
+- Training outcomes (completed, passed, failed, incomplete)  
+- Programme-level training spending  
+- Monthly spending trends  
+- Training success rate (52.5%)
 
-1. **Overview Page**
+---
 
-   * Total Employees
-   * Attrition Rate
-   * Average Satisfaction Score
-   * Average Monthly Income
+## Python Analysis Summary
 
-2. **Demographics Page**
+### 1. Data Loading and Inspection  
+(Notebook PDF pages 1–2)
 
-   * Age distribution
-   * Gender breakdown
-   * Department comparison
-   * Job role composition
+- Loaded a 3000-row HR dataset  
+- Inspected data structure and missing values  
+- Converted date columns (StartDate, ExitDate, DOB, Survey Date, Training Date)
 
-3. **Attrition Analysis**
+### 2. Feature Engineering  
+(Notebook PDF page 3)
 
-   * Attrition by job role
-   * Attrition by salary band
-   * Attrition by satisfaction level
-   * Key risk groups highlighted
+Created new analytical variables:
 
-4. **Performance Insights**
+- TenureDays, TenureYears  
+- Age  
+- Attrition (binary flag)  
+- TrainingCostPerDay  
 
-   * Performance by department
-   * Relationship between satisfaction & performance
-   * Promotions vs performance trends
+### 3. Exploratory Data Analysis
 
-## 📂 Files in This Repository
+- Attrition by BusinessUnit  
+- Engagement vs Satisfaction  
+- Age distribution by attrition (KDE curves)  
+- Several visual insights produced using Seaborn and Matplotlib  
 
-* `HR_Analytics.pbix` — Full Power BI dashboard
-* `/visuals` — Screenshots of report pages
-* `/data` — HR dataset (cleaned version)
-* `/canva-summary` — 1-page project summary
-* `/code` — (Optional) Python cleaning script
+### 4. Attrition Prediction Model  
+(Notebook PDF pages 5–6)
 
-## 📜 Documentation
+- Target: Attrition  
+- Features included age, tenure, engagement score, satisfaction score, work-life balance, performance score, gender, business unit  
+- Preprocessing using OneHotEncoding and StandardScaler  
+- Model: RandomForestClassifier  
+- Final accuracy: approximately 85%  
+- Feature importance visualization generated
 
-A 1-page Canva summary is included summarising:
+### 5. Survival Analysis  
+(Notebook PDF pages 7–8)
 
-* Problem statement
-* Methods
-* Key visuals
-* Insights & recommendations
+- Kaplan–Meier survival curve for overall tenure  
+- Department-level survival functions comparing retention  
 
-## 🔗 How to Use the PBIX File
+### 6. Employee Clustering  
+(Notebook PDF page 8)
 
-1. Download `HR_Analytics.pbix`
-2. Open in Power BI Desktop
-3. Ensure the dataset path is correct
-4. Refresh data
+- KMeans clustering (k=3) applied to Engagement, Satisfaction, and Work-Life Balance  
+- Cluster labels added to dataset  
 
-## 🚀 Skills Demonstrated
+### 7. Training Analysis and ROI  
+(Notebook PDF pages 9–12)
 
-* Data cleaning in Power Query
-* Data modelling using relationships
-* Creating calculated columns + DAX measures
-* Interactive dashboards
-* HR analytics domain knowledge
-* Insight communication
+- Performance vs training outcomes (boxplots)  
+- Training cost vs engagement and satisfaction  
+- Custom ROI Index calculated:
 
-## 📬 Contact
+ROI = (Performance + Satisfaction) - (Attrition * 100)
 
-If you’d like to collaborate or discuss data projects, feel free to reach out:
+- ROI by training programme  
+- Bar chart and annotated scatterplot to evaluate programme effectiveness  
 
-* **Email:** rose.hhbui@gmail.com
+---
 
+## Skills Demonstrated
+
+- Python: Pandas, Seaborn, Matplotlib, Scikit-Learn, Lifelines, Statsmodels  
+- Feature engineering, EDA, machine learning, clustering, survival analysis  
+- Training evaluation and ROI modelling  
+- Power BI: data modelling, DAX, report design  
+- HR analytics: attrition modelling, training insights, workforce analytics  
+
+---
